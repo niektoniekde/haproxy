@@ -2,7 +2,7 @@
 Image based on official Alpine Linux image with ``haproxy`` and ``bash`` installed via apk.
 Entrypoint is ``entrypoint.bash`` BASH script executing following actions:
 * check if there is any configuration file in ``/usr/local/etc/haproxy/conf.d`` (exit with error if there is none)
-* launch ``haproxy`` with parameters
+* launch ``haproxy`` with following parameters:
   * ``-f /usr/local/etc/haproxy/haproxy.cfg`` - basic configuration
   * ``-f /usr/local/etc/haproxy/conf.d`` - directory with configuration files
   * ``-db`` - disable background mode
