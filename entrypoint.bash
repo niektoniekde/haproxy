@@ -1,5 +1,5 @@
 #! /bin/bash
-set -eux
+set -euE
 CONFD="/usr/local/etc/haproxy/conf.d"
 
 if ! [[ -n $(ls -1A ${CONFD}) ]]; then
