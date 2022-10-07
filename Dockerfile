@@ -17,8 +17,9 @@ COPY entrypoint.bash /usr/local/bin/entrypoint.bash
 RUN chmod u=rwx,go=rx /usr/local/bin/entrypoint.bash
 
 # make /var/lib/haproxy/sock writable by haproxy
-RUN mkdir              -p /var/lib/haproxy/sock
-RUN chown haproxy:     -R /var/lib/haproxy/sock
+RUN mkdir               -p /var/lib/haproxy/sock
+RUN chown haproxy:      -R /var/lib/haproxy/sock
+RUN chmod ug=rwX,o-rwx  -R /var/lib/haproxy/sock
 
 # 'haproxy' user is present after
 #  installing 'haproxy' software via apk
